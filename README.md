@@ -44,7 +44,7 @@ pip install torch torchvision numpy matplotlib scikit-learn pillow
 ##  Usage
 
 ### Follow these steps to run the project:
-####Clone the repository
+#### Clone the repository
 ```bash
 git clone https://github.com/yourusername/faceguard-fgsm-attacks.git
 cd faceguard-fgsm-attacks
@@ -55,27 +55,27 @@ jupyter notebook CW.ipynb
 ```
 ### Execute the notebook sections
 ✅ **Model Training** 
-Trains a CNN using the augmented Olivetti face dataset.
-Plots training loss over epochs.
+- Trains a CNN using the augmented Olivetti face dataset.
+- Plots training loss over epochs.
 📈 **Model Evaluation**
-Tests accuracy on the unseen dataset.
-Prints classification results.
+- Tests accuracy on the unseen dataset.
+- Prints classification results.
 🔐 **Access Control**
-Runs predictions for selected individuals.
-Prints “Access Granted” or “Access Denied” based on their ID.
+- Runs predictions for selected individuals.
+- Prints “Access Granted” or “Access Denied” based on their ID.
 ⚠️ **Untargeted FGSM Attack**
-Applies adversarial perturbations with increasing epsilon.
-Plots how accuracy drops as noise increases.
+- Applies adversarial perturbations with increasing epsilon.
+- Plots how accuracy drops as noise increases.
 🎯 **Targeted FGSM Attack**
-Generates adversarial images to impersonate an authorized user.
-Attempts to bypass access control.
+- Generates adversarial images to impersonate an authorized user.
+- Attempts to bypass access control.
 🛡 **Adversarial Training**
-Retrains the model with adversarial examples.
-Compares robustness with the original model using accuracy vs epsilon plots.
+- Retrains the model with adversarial examples.
+- Compares robustness with the original model using accuracy vs epsilon plots.
 
 ### Results
-📉 Training Loss: Tracked and visualized over 50 epochs.
-🧪 FGSM Attacks: Visualizations of adversarial examples.
-📈 Accuracy vs Epsilon: Evaluates how noise impacts classification.
-✅ Access Decisions: System prints “Access Granted” or “Access Denied” for test images.
+- 📉 Training Loss: Tracked and visualized over 50 epochs.
+- 🧪 FGSM Attacks: Visualizations of adversarial examples.
+- 📈 Accuracy vs Epsilon: Evaluates how noise impacts classification.
+- ✅ Access Decisions: System prints “Access Granted” or “Access Denied” for test images.
 
