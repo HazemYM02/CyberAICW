@@ -1,56 +1,62 @@
-# Targeted and Untargeted FGSM on CAPTCHA
+# FaceGuard: AI-Based Access Control with Adversarial Testing
 
-This project showcases how adversarial machine learning techniques—specifically the Fast Gradient Sign Method (FGSM)—can be used to perform targeted and untargeted attacks on a CAPTCHA recognition model.
+This project presents a complete pipeline for building, evaluating, attacking, and defending an AI-based facial recognition system called FaceGuard, inspired by real-world access control use cases in cybersecurity.
 
-Overview
+It includes:
+	•	A CNN for face recognition using the Extended Olivetti Faces dataset.
+	•	A function for access control (Access_Control) granting or denying entry to specific individuals.
+	•	Adversarial robustness evaluation using FGSM attacks (targeted & untargeted).
+	•	Defense via adversarial training.
 
-CAPTCHAs are designed to distinguish humans from bots. However, modern deep learning models used to solve CAPTCHA challenges are vulnerable to adversarial attacks. This notebook demonstrates how to craft adversarial examples to:
-	•	🚫 Mislead the model into incorrect predictions (untargeted attack)
-	•	🎯 Force the model to output a specific incorrect label (targeted attack)
+⸻
 
-Both attack types are explored in detail using a convolutional neural network (CNN) and PyTorch.
+Features
+	•	🧠 Face Recognition CNN
+Custom CNN trained to classify 40 individuals using grayscale face images (64×64).
+	•	🔐 Access Control System
+Implements logic to only grant access to authorized personnel (IDs 0, 5, and 10).
+	•	🧪 Adversarial Testing
+	•	Untargeted FGSM Attack: Evaluates model robustness against increasing ε (epsilon) values.
+	•	Targeted FGSM Attack: Forces misclassification to gain unauthorized access.
+	•	🛡 Adversarial Training (Blue Team)
+Retrains model using adversarial examples to improve resistance to attacks.
 
-Project Structure
-	•	CW.ipynb: Main Jupyter Notebook containing model training, evaluation, and FGSM-based attacks.
-	•	CNN model: A 3-layer convolutional network trained on CAPTCHA-like data.
-	•	FGSM implementation: Attack logic using gradient-based perturbations.
-	•	Visualization: Accuracy degradation plots and adversarial example previews.
+⸻
 
-⚙️ Requirements
+🛠 Installation
 
-Ensure the following Python packages are installed:
-	•	torch
-	•	numpy
-	•	matplotlib
-	•	PIL
-	•	sklearn
-	•	opencv-python (if needed for CAPTCHA generation)
+🔧 Requirements
 
-Install via:
-
-pip install torch numpy matplotlib pillow scikit-learn opencv-python
-
-🚀 Usage
-	1.	Clone the repository:
-
-git clone https://github.com/yourusername/targeted-untargeted-fgsm-captcha.git
-cd targeted-untargeted-fgsm-captcha
+pip install torch torchvision numpy matplotlib scikit-learn pillow
 
 
-	2.	Launch the notebook:
+⸻
+
+🚀 How to Run
+	1.	Launch the notebook:
 
 jupyter notebook CW.ipynb
 
 
-	3.	Follow the cells to:
-	•	Train the CNN on CAPTCHA data
-	•	Perform untargeted FGSM attacks and plot accuracy vs. epsilon
-	•	Perform targeted FGSM attacks and visualize success
+	2.	Run through the sections:
+	•	CNN Definition & Training
+	•	Model Evaluation
+	•	Access Control Logic
+	•	FGSM Attacks (Targeted & Untargeted)
+	•	Adversarial Training and Comparison
 
-📊 Results
-	•	Untargeted FGSM: Shows how increasing epsilon degrades model accuracy.
-	•	Targeted FGSM: Demonstrates successful manipulation of model outputs toward attacker-chosen labels.
+⸻
 
-🔐 Security Insight
+📊 Sample Results
+	•	Accuracy Plot: Model performance over training epochs.
+	•	Access Logs: Console output of “Access Granted” or “Access Denied”.
+	•	Adversarial Visuals: Comparison between original and perturbed inputs.
+	•	Epsilon vs Accuracy: Visualization of model robustness under FGSM.
 
-This project emphasizes the vulnerability of AI-based security systems to minimal, human-imperceptible perturbations, reinforcing the need for robust training and defense mechanisms.
+⸻
+
+🔍 Use Case
+
+This project simulates a real-world cybersecurity scenario: securing access to a sensitive area using AI and understanding its vulnerabilities through red team (attack) and blue team (defense) strategies.
+
+⸻
