@@ -10,7 +10,7 @@ It includes:
 
 ⸻
 
-Features
+📦 Features
 	•	🧠 Face Recognition CNN
 Custom CNN trained to classify 40 individuals using grayscale face images (64×64).
 	•	🔐 Access Control System
@@ -60,3 +60,12 @@ jupyter notebook CW.ipynb
 This project simulates a real-world cybersecurity scenario: securing access to a sensitive area using AI and understanding its vulnerabilities through red team (attack) and blue team (defense) strategies.
 
 ⸻
+
+📜 License
+
+MIT License.
+For educational and research purposes.
+
+⸻
+
+Let me know if you’d like a Markdown file generated from this directly. ￼
