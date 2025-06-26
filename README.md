@@ -57,18 +57,23 @@ jupyter notebook CW.ipynb
 ✅ **Model Training** 
 - Trains a CNN using the augmented Olivetti face dataset.
 - Plots training loss over epochs.
+  
 📈 **Model Evaluation**
 - Tests accuracy on the unseen dataset.
 - Prints classification results.
+  
 🔐 **Access Control**
 - Runs predictions for selected individuals.
 - Prints “Access Granted” or “Access Denied” based on their ID.
+  
 ⚠️ **Untargeted FGSM Attack**
 - Applies adversarial perturbations with increasing epsilon.
 - Plots how accuracy drops as noise increases.
+  
 🎯 **Targeted FGSM Attack**
 - Generates adversarial images to impersonate an authorized user.
 - Attempts to bypass access control.
+  
 🛡 **Adversarial Training**
 - Retrains the model with adversarial examples.
 - Compares robustness with the original model using accuracy vs epsilon plots.
