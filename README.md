@@ -1,71 +1,81 @@
 # FaceGuard: AI-Based Access Control with Adversarial Testing
 
-This project presents a complete pipeline for building, evaluating, attacking, and defending an AI-based facial recognition system called FaceGuard, inspired by real-world access control use cases in cybersecurity.
+This repository contains a complete implementation of a facial recognition-based access control system called **FaceGuard**, built using PyTorch. It demonstrates how adversarial attacks can compromise such systems and how to defend against them using adversarial training.
 
-It includes:
-	•	A CNN for face recognition using the Extended Olivetti Faces dataset.
-	•	A function for access control (Access_Control) granting or denying entry to specific individuals.
-	•	Adversarial robustness evaluation using FGSM attacks (targeted & untargeted).
-	•	Defense via adversarial training.
+---
 
-⸻
+##  Overview
 
-📦 Features
-	•	🧠 Face Recognition CNN
-Custom CNN trained to classify 40 individuals using grayscale face images (64×64).
-	•	🔐 Access Control System
-Implements logic to only grant access to authorized personnel (IDs 0, 5, and 10).
-	•	🧪 Adversarial Testing
-	•	Untargeted FGSM Attack: Evaluates model robustness against increasing ε (epsilon) values.
-	•	Targeted FGSM Attack: Forces the model to misclassify input as a specific authorized user.
-	•	🛡 Adversarial Training (Blue Team)
-Retrains the model using adversarial examples to improve resistance to attacks and enhance system robustness.
+FaceGuard is designed to control access to a sensitive server room by identifying personnel using facial recognition. Only authorized users (IDs `0`, `5`, and `10`) are allowed access. This project includes:
 
-⸻
+- A CNN model for facial classification
+- An access control system based on model predictions
+- Targeted and untargeted FGSM adversarial attacks
+- Adversarial training to improve robustness
 
-🛠 Installation
 
-🔧 Requirements
 
+## Features
+
+- 🧠 **Face Recognition CNN**  
+  Custom CNN trained to classify 40 individuals using grayscale face images (64×64).
+
+- 🔐 **Access Control System**  
+  Implements logic to only grant access to authorized personnel (IDs `0`, `5`, and `10`).
+
+- 🧪 **Adversarial Testing**
+  - **Untargeted FGSM Attack**: Evaluates model robustness against increasing ε (epsilon) values.
+  - **Targeted FGSM Attack**: Forces the model to misclassify input as a specific authorized user.
+
+- 🛡 **Adversarial Training (Blue Team)**  
+  Retrains the model using adversarial examples to improve resistance to attacks and enhance system robustness.
+
+
+
+## 🛠 Installation
+
+### Requirements
+
+Install required Python packages:
+
+```bash
 pip install torch torchvision numpy matplotlib scikit-learn pillow
+```
+##  Usage
 
-
-⸻
-
-🚀 How to Run
-	1.	Launch the notebook:
-
+### Follow these steps to run the project:
+####Clone the repository
+```bash
+git clone https://github.com/yourusername/faceguard-fgsm-attacks.git
+cd faceguard-fgsm-attacks
+```
+### Start Jupyter Notebook
+```bash
 jupyter notebook CW.ipynb
+```
+### Execute the notebook sections
+✅ **Model Training** 
+Trains a CNN using the augmented Olivetti face dataset.
+Plots training loss over epochs.
+📈 **Model Evaluation**
+Tests accuracy on the unseen dataset.
+Prints classification results.
+🔐 **Access Control**
+Runs predictions for selected individuals.
+Prints “Access Granted” or “Access Denied” based on their ID.
+⚠️ **Untargeted FGSM Attack**
+Applies adversarial perturbations with increasing epsilon.
+Plots how accuracy drops as noise increases.
+🎯 **Targeted FGSM Attack**
+Generates adversarial images to impersonate an authorized user.
+Attempts to bypass access control.
+🛡 **Adversarial Training**
+Retrains the model with adversarial examples.
+Compares robustness with the original model using accuracy vs epsilon plots.
 
+### Results
+📉 Training Loss: Tracked and visualized over 50 epochs.
+🧪 FGSM Attacks: Visualizations of adversarial examples.
+📈 Accuracy vs Epsilon: Evaluates how noise impacts classification.
+✅ Access Decisions: System prints “Access Granted” or “Access Denied” for test images.
 
-	2.	Run through the sections:
-	•	CNN Definition & Training
-	•	Model Evaluation
-	•	Access Control Logic
-	•	FGSM Attacks (Targeted & Untargeted)
-	•	Adversarial Training and Comparison
-
-⸻
-
-📊 Sample Results
-	•	Accuracy Plot: Model performance over training epochs.
-	•	Access Logs: Console output of “Access Granted” or “Access Denied”.
-	•	Adversarial Visuals: Comparison between original and perturbed inputs.
-	•	Epsilon vs Accuracy: Visualization of model robustness under FGSM.
-
-⸻
-
-🔍 Use Case
-
-This project simulates a real-world cybersecurity scenario: securing access to a sensitive area using AI and understanding its vulnerabilities through red team (attack) and blue team (defense) strategies.
-
-⸻
-
-📜 License
-
-MIT License.
-For educational and research purposes.
-
-⸻
-
-Let me know if you’d like a Markdown file generated from this directly. ￼
