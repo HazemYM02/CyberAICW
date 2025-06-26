@@ -17,9 +17,9 @@ Custom CNN trained to classify 40 individuals using grayscale face images (64×6
 Implements logic to only grant access to authorized personnel (IDs 0, 5, and 10).
 	•	🧪 Adversarial Testing
 	•	Untargeted FGSM Attack: Evaluates model robustness against increasing ε (epsilon) values.
-	•	Targeted FGSM Attack: Forces misclassification to gain unauthorized access.
+	•	Targeted FGSM Attack: Forces the model to misclassify input as a specific authorized user.
 	•	🛡 Adversarial Training (Blue Team)
-Retrains model using adversarial examples to improve resistance to attacks.
+Retrains the model using adversarial examples to improve resistance to attacks and enhance system robustness.
 
 ⸻
 
